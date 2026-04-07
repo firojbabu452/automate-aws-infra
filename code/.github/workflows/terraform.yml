@@ -6,12 +6,16 @@ on:
       - main
       - test
       - dev
+    paths:
+      - 'code/**'
 
   pull_request:
     branches:
       - main
       - test
       - dev
+    paths:
+      - 'code/**'
 
 env:
   TF_LOG: INFO
@@ -162,6 +166,7 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: code
 
     steps:
       - name: Checkout
